@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block title %}Create Account | CertiChain{% endblock %}
+
+{% block auth_content %}
+<div class="auth-page">
+
+    <div class="auth-left">
+        <a href="/" class="brand">
+            <span class="brand-icon"><i class="bi bi-shield-check"></i></span>
+            CertiChain.
+        </a>
+
+        <h1>Trust every certificate. Verify every achievement.</h1>
+
+        <p>
+            A smarter certificate verification platform powered by
+            Artificial Intelligence and Blockchain technology.
+        </p>
+
+        <i class="bi bi-shield-lock auth-left-icon"></i>
+    </div>
+
+    <div class="auth-right">
+        <div class="auth-form">
+
+            <h2>Create your account</h2>
+            <p class="subtitle">Register your administrator account to continue.</p>
+
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }} small">{{ message }}</div>
+                {% endfor %}
+            {% endwith %}
+
+            <form method="POST">
+
+                <div class="mb-3">
+                    <label class="form-label">Username</label>
+                    <input class="form-control" type="text"
+                           name="username" placeholder="Enter username" required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Email address</label>
+                    <input class="form-control" type="email"
+                           name="email" placeholder="Enter email address" required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Password</label>
+                    <input class="form-control" type="password"
+                           name="password" minlength="8"
+                           placeholder="Create a strong password" required>
+                </div>
+
+                <button class="auth-submit" type="submit">
+                    Create Account <i class="bi bi-arrow-right ms-2"></i>
+                </button>
+
+            </form>
+
+            <div class="auth-footer">
+                Already have an account?
+                <a href="{{ url_for('auth.login') }}">Sign in</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

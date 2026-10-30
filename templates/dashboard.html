@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard | CertiChain{% endblock %}
+
+{% block content %}
+
+<div class="welcome-banner">
+    <i class="bi bi-shield-check banner-icon"></i>
+
+    <span class="small text-white-50">CERTICHAIN ADMINISTRATION</span>
+
+    <h2>Your certificates. Your trust. Your security.</h2>
+
+    <p>
+        Manage educational credentials with AI intelligence
+        and blockchain technology.
+    </p>
+
+    <a href="{{ url_for('pages.upload') }}" class="btn-primary-custom">
+        <i class="bi bi-cloud-upload me-2"></i>
+        Upload Certificate
+    </a>
+</div>
+
+<h5 class="section-title">Platform Overview</h5>
+
+<div class="row g-3 mb-4">
+
+    <div class="col-md-4">
+        <div class="stat-card">
+            <div class="stat-icon" style="background:#eeedff;color:#635bff">
+                <i class="bi bi-file-earmark-check"></i>
+            </div>
+            <h3>0</h3>
+            <p>Total Certificates</p>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="stat-card">
+            <div class="stat-icon" style="background:#e6f8ef;color:#20a46c">
+                <i class="bi bi-patch-check"></i>
+            </div>
+            <h3>0</h3>
+            <p>Verified Certificates</p>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="stat-card">
+            <div class="stat-icon" style="background:#fff3e6;color:#ef963d">
+                <i class="bi bi-cpu"></i>
+            </div>
+            <h3>AI</h3>
+            <p>Intelligence Engine</p>
+        </div>
+    </div>
+
+</div>
+
+<h5 class="section-title">System Modules</h5>
+
+<div class="row g-3">
+
+    <div class="col-md-4">
+        <a href="{{ url_for('pages.upload') }}" class="module-card d-block">
+            <div class="module-icon"><i class="bi bi-cloud-arrow-up"></i></div>
+            <h6>Certificate Upload</h6>
+            <p>Upload academic certificates securely.</p>
+        </a>
+    </div>
+
+    <div class="col-md-4">
+        <a href="{{ url_for('pages.verification') }}" class="module-card d-block">
+            <div class="module-icon"><i class="bi bi-robot"></i></div>
+            <h6>AI Text Extraction</h6>
+            <p>Extract certificate details using OCR.</p>
+        </a>
+    </div>
+
+    <div class="col-md-4">
+        <a href="{{ url_for('pages.history') }}" class="module-card d-block">
+            <div class="module-icon"><i class="bi bi-shield-exclamation"></i></div>
+            <h6>Tampering Detection</h6>
+            <p>Analyze documents for suspicious alterations.</p>
+        </a>
+    </div>
+
+    <div class="col-md-4">
+        <a href="#" class="module-card d-block">
+            <div class="module-icon"><i class="bi bi-fingerprint"></i></div>
+            <h6>SHA-256 Security</h6>
+            <p>Generate unique certificate fingerprints.</p>
+        </a>
+    </div>
+
+    <div class="col-md-4">
+        <a href="#" class="module-card d-block">
+            <div class="module-icon"><i class="bi bi-boxes"></i></div>
+            <h6>Blockchain Registry</h6>
+            <p>Register certificate hashes on Ethereum.</p>
+        </a>
+    </div>
+
+    <div class="col-md-4">
+        <a href="#" class="module-card d-block">
+            <div class="module-icon"><i class="bi bi-qr-code-scan"></i></div>
+            <h6>QR Verification</h6>
+            <p>Verify certificates through QR codes.</p>
+        </a>
+    </div>
+
+</div>
+
+{% endblock %}

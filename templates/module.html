@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page_title }} | CertiChain{% endblock %}
+
+{% block content %}
+
+<div class="d-flex align-items-center gap-3 mb-4">
+    <div class="stat-icon mb-0"
+         style="background:#eeedff;color:#635bff;width:55px;height:55px">
+        <i class="bi {{ page_icon }}"></i>
+    </div>
+
+    <div>
+        <h3 class="fw-bold mb-1">{{ page_title }}</h3>
+        <p class="text-secondary small mb-0">{{ page_subtitle }}</p>
+    </div>
+</div>
+
+<div class="module-card mb-4">
+    <div class="module-icon">
+        <i class="bi {{ page_icon }}"></i>
+    </div>
+
+    <h5 class="fw-bold">{{ page_title }}</h5>
+
+    <p class="mb-3">{{ description }}</p>
+
+    <span class="badge rounded-pill text-bg-primary">
+        {{ status }}
+    </span>
+</div>
+
+<div class="module-card">
+    <h6 class="fw-bold mb-2">Coming next</h6>
+    <p class="mb-0">
+        This module will be connected to the backend functionality
+        as we develop the project step by step.
+    </p>
+</div>
+
+<a href="{{ url_for('auth.dashboard') }}"
+   class="btn btn-primary mt-4">
+    <i class="bi bi-arrow-left me-2"></i>
+    Back to Dashboard
+</a>
+
+{% endblock %}
